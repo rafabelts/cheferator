@@ -1,7 +1,11 @@
+"use client";
 import Link from "next/link";
-import IngredientContainer from "~/app/_components/ingredient_container";
+import React from "react";
+import { ToggleGroup, ToggleGroupItem } from "~/components/ui/toggle-group";
 
 export default function RenderIngredients() {
+  const [ingredientsSelected, setIngredientsSelected] = React.useState([]);
+
   const ingredients = [
     "pan",
     "atun",
@@ -26,17 +30,31 @@ export default function RenderIngredients() {
 
   return (
     <div>
-      <div className="mt-10 grid grid-cols-8 gap-x-10 gap-y-[40px]">
-        {ingredients.map((ingredient) => (
-          <IngredientContainer ingredient={ingredient} key={ingredient} />
-        ))}
-      </div>
-      <Link
-        href={"/recetas"}
-        className="ml-auto mt-16 flex w-[20vw] cursor-pointer items-center justify-center rounded-lg bg-yellow-500"
+      <ToggleGroup
+        type="multiple"
+        className="mt-10 grid grid-cols-8 gap-x-10 gap-y-[40px]"
+        onValueChange={(value) => setIngredientsSelected(value)}
       >
-        Continuar
-      </Link>
+        {ingredients.map((ingredient) => (
+          <ToggleGroupItem
+            key={ingredient}
+            value={ingredient}
+            className="h-[15vh] w-[15vh] cursor-pointer rounded-xl bg-red-500 hover:bg-red-500/90"
+          >
+            {ingredient}
+          </ToggleGroupItem>
+        ))}
+      </ToggleGroup>
+      {ingredientsSelected.length === 0 ? (
+        <></>
+      ) : (
+        <Link
+          href={"/recetas"}
+          className="ml-auto mt-16 flex w-[20vw] cursor-pointer items-center justify-center rounded-lg bg-yellow-500"
+        >
+          Continuar
+        </Link>
+      )}
     </div>
   );
 }
