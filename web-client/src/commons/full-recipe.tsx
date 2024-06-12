@@ -19,9 +19,9 @@ export default function FullRecipe(props: { recipeID: string }) {
 
   return (
     <div className="px-10 py-8">
-      <div className="flex flex-row items-center">
-        <div className="flex h-[10vh] w-[10vh] rounded-2xl bg-blue-600"></div>
-        <Title>{recipe[0].title}</Title>
+      <div className="flex flex-col items-center md:flex-row">
+        <div className="flex h-[20vh] w-full rounded-2xl bg-blue-600 md:h-[10vh] md:w-[10vh]"></div>
+        <Title isCentered={true}>{recipe[0].title}</Title>
       </div>
       <div className="flex flex-col gap-5 text-balance">
         <p>Tiempo de preparación: {recipe[0].time}</p>

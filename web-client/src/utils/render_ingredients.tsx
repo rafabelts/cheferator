@@ -7,39 +7,49 @@ export default function RenderIngredients() {
   const [ingredientsSelected, setIngredientsSelected] = React.useState([]);
 
   const ingredients = [
-    "pan",
-    "atun",
-    "mayonesa",
-    "lechuga",
-    "pollo",
-    "sal",
-    "tomate",
-    "tortilla de harina",
-    "jamon",
-    "queso",
-    "tortilla",
-    "carne molida",
-    "cebolla",
-    "salsa",
-    "pan molido",
-    "huevo",
-    "aceite",
-    "arroz",
-    "cubos de caldo de pollo",
+    "Pan",
+    "Atun",
+    "Mayonesa",
+    "Lechuga",
+    "Pollo",
+    "Sal",
+    "Tomate",
+    "Tortilla de harina",
+    "Jamon",
+    "Queso",
+    "Tortilla",
+    "Carne molida",
+    "Cebolla",
+    "Salsa",
+    "Pan molido",
+    "Huevo",
+    "Aceite",
+    "Arroz",
+    "Cubos de caldo de pollo",
   ];
 
   return (
     <div>
       <ToggleGroup
         type="multiple"
-        className="mt-10 grid grid-cols-8 gap-x-10 gap-y-[40px]"
+        className="mt-10 grid grid-cols-3 gap-x-4 gap-y-[40px] md:grid-cols-8 md:gap-x-10"
         onValueChange={(value) => setIngredientsSelected(value)}
       >
         {ingredients.map((ingredient) => (
           <ToggleGroupItem
             key={ingredient}
             value={ingredient}
-            className="h-[15vh] w-[15vh] cursor-pointer rounded-xl bg-red-500 hover:bg-red-500/90"
+            className="
+            bg-container
+            text-secondary_text
+            hover:bg-ingredients_container/95
+            h-[12vh]
+            w-[12vh]
+            cursor-pointer
+            rounded-xl
+            font-bold
+            md:h-[15vh]
+            md:w-[15vh]"
           >
             {ingredient}
           </ToggleGroupItem>
@@ -50,7 +60,19 @@ export default function RenderIngredients() {
       ) : (
         <Link
           href={"/recetas"}
-          className="ml-auto mt-16 flex w-[20vw] cursor-pointer items-center justify-center rounded-lg bg-yellow-500"
+          className="
+          bg-button_bg
+          ml-auto
+          mt-16
+          flex
+          w-full
+          cursor-pointer
+          items-center
+          justify-center
+          rounded-lg
+          p-2
+          font-bold
+        "
         >
           Continuar
         </Link>
