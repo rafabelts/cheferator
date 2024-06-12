@@ -69,11 +69,5 @@ GenerarConexiones(conexiones, ingredientes, recetas, 9, [10, 4, 5, 13, 9, 12])
 for i in range(len(conexiones)): 
     G.add_edges_from(conexiones[i])
 
-
-graph_image = nx.draw(G, node_color="white", font_color="black", node_size=800, font_size=4, with_labels=True)
-
-nx.spring_layout(G, k=0.20, iterations=20)
-
-
-# plt.show()
-print(BuscarRecetas(G, ["tortilla de harina"]));
+layout = nx.spring_layout(G, k=0.20, iterations=20)
+RenderGraphImage = nx.draw(G, node_color="white", font_color="black", node_size=800, font_size=4, with_labels=True)

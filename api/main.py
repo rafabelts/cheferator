@@ -2,17 +2,17 @@ from typing import Union
 from fastapi import FastAPI, Response
 # standard python types
 from pydantic import BaseModel
-from graph import G, graph_image
+from graph import G, RenderGraphImage 
 import matplotlib.pyplot as plt
 import io
 
-app = FastAPI()
+from graph_functions import BuscarRecetas
 
-#@app.put("/send_ingredients")
+app = FastAPI()
 
 @app.get("/")
 async def graph():
-    graph_image
+    RenderGraphImage 
     # Guardar el gráfico en un buffer de bytes
     buffer = io.BytesIO()
     plt.savefig(buffer, format='png', dpi=300)
@@ -20,21 +20,26 @@ async def graph():
     # Devolver la imagen como respuesta
     return Response(content=buffer.getvalue(), media_type="image/png")
 
+# Ruta para obtener las recetas recomendadas
+@app.get("/obtener-receta")
+async def get_recipes(q:Union[str, None]):
+    return { "recetas": BuscarRecetas(G, q.split(","))}
+
 # Ruta para obtener información sobre el grafo
-@app.get("/graph/info")
+@app.get("/grafo/info")
 async def get_graph_info():
     nodes = G.number_of_nodes()
     edges = G.number_of_edges()
     return {"nodes": nodes, "edges": edges}
 
 # Ruta para obtener los nodos del grafo
-@app.get("/graph/nodes")
+@app.get("/grafo/nodos")
 async def get_graph_nodes():
     nodes = list(G.nodes())
     return {"nodes": nodes}
 
-# Ruta para obtener los enlaces del grafo
-@app.get("/graph/edges")
+# Ruta para obtener las conexiones del grafo
+@app.get("/grafo/conexiones")
 async def get_graph_edges():
     edges = list(G.edges())
     return {"edges": edges}
