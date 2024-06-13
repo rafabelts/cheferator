@@ -1,5 +1,5 @@
+![cheferator logo](https://utfs.io/f/2f637464-1fbb-4ca0-9d68-0ba45fb70a9f-b74ppr.ico)
 # Cheferator
-
 Cheferator nace con el propósito de apoyar a estudiantes foráneos en la preparación de comidas, proporcionando recomendaciones inteligentes de recetas basadas en los ingredientes que tienen disponibles. Este recomendador de recetas utiliza la teoría de grafos para encontrar las mejores combinaciones de ingredientes, asegurando que los usuarios puedan aprovechar al máximo lo que tienen en sus cocinas.
 
 El cliente web de Cheferator está desarrollado con TypeScript y Next.js, ofreciendo una experiencia de usuario fluida y eficiente. Con Cheferator, los estudiantes no solo podrán explorar nuevas recetas, sino también aprender a cocinar de manera más creativa y económica.
