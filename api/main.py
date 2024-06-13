@@ -14,7 +14,7 @@ app = FastAPI()
 # Configure CORS
 origins = [
     "http://localhost:3000",
-    "https://cheferator.vercel.app/"
+    "https://cheferator.vercel.app"
 ]
 
 app.add_middleware(
