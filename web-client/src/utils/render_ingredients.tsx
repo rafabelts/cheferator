@@ -14,7 +14,7 @@ export default function RenderIngredients() {
       console.log(ingredientsSTR);
 
       const response = await fetch(
-        `http://127.0.0.1:8000/obtener-receta?q=${ingredientsSTR}`,
+        `https://cheferator-api.vercel.app/obtener-receta?q=${ingredientsSTR}`,
       );
 
       if (!response.ok) {
