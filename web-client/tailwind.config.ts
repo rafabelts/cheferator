@@ -19,7 +19,6 @@ const config = {
     },
     extend: {
       colors: {
-        //        ingredients_container: "#F5F5DC",
         container: "#D8BFD8",
         primary_text: "#333333",
         button_bg: "#8BC34A",
