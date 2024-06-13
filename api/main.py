@@ -3,7 +3,7 @@ from fastapi import FastAPI, Response
 from fastapi.middleware.cors import CORSMiddleware
 # standard python types
 from pydantic import BaseModel
-from graph import G, recetas, RenderGraphImage 
+from graph import G, recetas, RenderGraphImage, nodos, relaciones, grados, excentricidades, radio, diametro, centros, periferias
 import matplotlib.pyplot as plt
 import io
 
@@ -45,13 +45,41 @@ async def get_recipes(q:Union[str, None]):
 async def get_graph_info():
     nodes = G.number_of_nodes()
     edges = G.number_of_edges()
-    return {"nodes": nodes, "edges": edges}
+    return {"nodos": nodes, "relaciones": edges}
 
 # Ruta para obtener los nodos del grafo
 @app.get("/grafo/nodos")
 async def get_graph_nodes():
-    nodes = list(G.nodes())
-    return {"nodes": nodes}
+    return {"nodes": nodos}
+
+@app.get("/grafo/relaciones")
+async def get_graph_edges():
+    return {"nodes": relaciones}
+
+@app.get("/grafo/grados")
+async def get_graph_grades():
+    return {"grados": grados}
+
+@app.get("/grafo/excentricidades")
+async def get_graph_eccentricity():
+    return {"excentricidades": excentricidades}
+
+@app.get("/grafo/radio")
+async def get_graph_radius():
+    return {"radio": radio}
+
+@app.get("/grafo/diametro")
+async def get_graph_diameter():
+    return {"grados": diametro}
+
+@app.get("/grafo/centros")
+async def get_graph_centers():
+    return {"centros": centros}
+
+@app.get("/grafo/periferias")
+async def get_graph_periphery():
+    return {"periferias": periferias}
+
 
 # Ruta para obtener las conexiones del grafo
 @app.get("/grafo/conexiones")
