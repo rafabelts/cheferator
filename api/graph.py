@@ -6,40 +6,41 @@ from graph_functions import AñadirNodos, GenerarConexiones, BuscarRecetas
 G = nx.Graph()
 
 # Ingredientes
-ingredientes = ["pan",
-                "atun",
-                "mayonesa", 
-                "lechuga", 
-                "pollo", 
-                "sal",
-                "tomate", 
-                "tortilla de harina", 
-                "jamon", 
-                "queso", 
-                "tortilla", 
-                "carne molida",
-                "cebolla", 
-                "salsa", 
-                "pan molido", 
-                "huevo", 
-                "aceite",
-                "arroz",
-                "cubos de caldo de pollo"] 
+ingredientes = ["Pan",
+                "Atun",
+                "Mayonesa", 
+                "Lechuga", 
+                "Pollo", 
+                "Sal",
+                "Tomate", 
+                "Tortilla de harina", 
+                "Jamon", 
+                "Queso", 
+                "Tortilla", 
+                "Carne molida",
+                "Cebolla", 
+                "Salsa", 
+                "Pan molido", 
+                "Huevo", 
+                "Aceite",
+                "Arroz",
+                "Cubos de caldo de pollo"] 
 
 AñadirNodos(G, ingredientes, "ingredientes")
 
 # Recetas disponibles por el momento
 recetas = [
-        "sandwich de atun", 
-        "ensalada de pollo", 
-        "wrap de jamon y queso", 
-        "ensalada de atun", 
-        "tacos de carne",
-        "wrap de pollo", 
-        "pollo empanizado", 
-        "carne molida con arroz", 
-        "arroz con pollo",
-        "enchiladas de pollo"]
+        "Sandwich de atun", 
+        "Ensalada de pollo", 
+        "Wrap de jamon y queso", 
+        "Ensalada de atun", 
+        "Tacos de carne",
+        "Wrap de pollo", 
+        "Pollo empanizado", 
+        "Carne molida con arroz", 
+        "Arroz con pollo",
+        "Enchiladas de pollo"]
+
 AñadirNodos(G, recetas, "recetas")
 
 # Definiendo las conexiones usando bucles

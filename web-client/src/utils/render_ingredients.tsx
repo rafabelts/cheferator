@@ -2,9 +2,31 @@
 import Link from "next/link";
 import React from "react";
 import { ToggleGroup, ToggleGroupItem } from "~/components/ui/toggle-group";
+import { useAppData } from "~/context/context";
 
 export default function RenderIngredients() {
+  const context = useAppData();
   const [ingredientsSelected, setIngredientsSelected] = React.useState([]);
+
+  async function searchRecipes(ingredientsAvailable: Array<string>) {
+    try {
+      const ingredientsSTR = ingredientsAvailable.join(",");
+      console.log(ingredientsSTR);
+
+      const response = await fetch(
+        `http://127.0.0.1:8000/obtener-receta?q=${ingredientsSTR}`,
+      );
+
+      if (!response.ok) {
+        throw new Error("Error al buscar recetas");
+      }
+
+      const data = await response.json();
+      context?.updateRecipes(data);
+    } catch (error) {
+      console.error("Error en la solicitud:", error);
+    }
+  }
 
   const ingredients = [
     "Pan",
@@ -40,13 +62,13 @@ export default function RenderIngredients() {
             key={ingredient}
             value={ingredient}
             className="
-            bg-container
             text-secondary_text
             hover:bg-ingredients_container/95
             h-[12vh]
             w-[12vh]
             cursor-pointer
             rounded-xl
+            bg-container
             font-bold
             md:h-[15vh]
             md:w-[15vh]"
@@ -59,20 +81,21 @@ export default function RenderIngredients() {
         <></>
       ) : (
         <Link
+          onClick={async () => await searchRecipes(ingredientsSelected)}
           href={"/recetas"}
           className="
-          bg-button_bg
-          ml-auto
-          mt-16
-          flex
-          w-full
-          cursor-pointer
-          items-center
-          justify-center
-          rounded-lg
-          p-2
-          font-bold
-        "
+      ml-auto
+      mt-16
+      flex
+      w-full
+      cursor-pointer
+      items-center
+      justify-center
+      rounded-lg
+      bg-button_bg
+      p-2
+      font-bold
+      "
         >
           Continuar
         </Link>

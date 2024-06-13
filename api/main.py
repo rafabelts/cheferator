@@ -1,14 +1,28 @@
 from typing import Union
 from fastapi import FastAPI, Response
+from fastapi.middleware.cors import CORSMiddleware
 # standard python types
 from pydantic import BaseModel
-from graph import G, RenderGraphImage 
+from graph import G, recetas, RenderGraphImage 
 import matplotlib.pyplot as plt
 import io
 
 from graph_functions import BuscarRecetas
 
 app = FastAPI()
+
+# Configure CORS
+origins = [
+    "http://localhost:3000"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 async def graph():
@@ -23,7 +37,7 @@ async def graph():
 # Ruta para obtener las recetas recomendadas
 @app.get("/obtener-receta")
 async def get_recipes(q:Union[str, None]):
-    return { "recetas": BuscarRecetas(G, q.split(","))}
+    return BuscarRecetas(G, q.split(","), recetas)
 
 # Ruta para obtener información sobre el grafo
 @app.get("/grafo/info")
