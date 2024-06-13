@@ -45,9 +45,7 @@ api_folder = './api'
 
 # Añadir la ruta de la carpeta donde está graph
 sys.path.append(api_folder)
-
-from graph import G, RenderGraphImage
-
+from graph import G
 
 nx.draw(G, node_color="white", font_color="black", node_size=800, font_size=4, with_labels=True)
 ```
@@ -200,7 +198,8 @@ list(G.degree())
 
 
 ```python
-dict(nx.eccentricity(G))
+excentricidades = nx.eccentricity(G)
+excentricidades
 ```
 
 
@@ -236,6 +235,68 @@ dict(nx.eccentricity(G))
      'Arroz con pollo': 5,
      'Enchiladas de pollo': 5}
 
+
+
+### Radio:
+
+
+```python
+nx.radius(G)
+```
+
+
+
+
+    3
+
+
+
+### Diametro: 
+
+
+```python
+nx.diameter(G)
+```
+
+
+
+
+    6
+
+
+
+### Centro(s):
+
+
+```python
+for centro in list(nx.center(G)):
+    print(centro)
+```
+
+    Ensalada de pollo
+    Wrap de pollo
+
+
+### Periferia(s):
+
+
+```python
+for periferia in list(nx.periphery(G)):
+    print(periferia)
+```
+
+    Pan
+    Atun
+    Jamon
+    Tortilla
+    Carne molida
+    Cebolla
+    Salsa
+    Pan molido
+    Huevo
+    Aceite
+    Arroz
+    Cubos de caldo de pollo
 
 
 ### ¿Cómo trabaja en cheferator?
