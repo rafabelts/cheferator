@@ -12,7 +12,8 @@ type RecipeDataType = Record<
 
 export const recipesData: RecipeDataType = {
   "Sandwich de atun": {
-    dish_image_url: "",
+    dish_image_url:
+      "https://utfs.io/f/22076bb6-1e67-40d6-a852-21b36628da2a-ao46se.jpg",
     title: "Sandwich de atun",
     description:
       "Un clásico renovado con pan fresco, atún jugoso, mayonesa cremosa y un toque de lechuga fresca",
@@ -28,7 +29,7 @@ export const recipesData: RecipeDataType = {
   },
   "Ensalada de pollo": {
     dish_image_url:
-      "Pollo tierno con crujiente lechuga y tomate, todo sazonado a la perfección",
+      "https://utfs.io/f/0f94ad4b-ead1-44d1-b2b6-23f287cd2110-ojqtsk.jpg",
     title: "Ensalada de pollo",
     description:
       "Pollo tierno con crujiente lechuga y tomate, todo sazonado a la perfección",
@@ -43,7 +44,8 @@ export const recipesData: RecipeDataType = {
     ],
   },
   "Wrap de jamon y queso": {
-    dish_image_url: "",
+    dish_image_url:
+      "https://utfs.io/f/c63e3d29-7b10-4f06-a970-fe97e6bf2e2c-a7bhxh.jpg",
     title: "Wrap de jamon y queso",
     description:
       "Tortilla de harina rellena de jamón, queso derretido y la frescura de la lechuga",
@@ -57,7 +59,8 @@ export const recipesData: RecipeDataType = {
     ],
   },
   "Ensalada de atun": {
-    dish_image_url: "",
+    dish_image_url:
+      "https://utfs.io/f/9cb852e2-30c1-49fa-9180-65a37aa4fa3d-62owa8.jpg",
     title: "Ensalada de atun",
     description:
       "Una mezcla refrescante de atún, lechuga fresca, tomate jugoso y una leve capa de mayonesa",
@@ -72,7 +75,8 @@ export const recipesData: RecipeDataType = {
     ],
   },
   "Tacos de carne": {
-    dish_image_url: "",
+    dish_image_url:
+      "https://utfs.io/f/f1f53749-fa1a-47db-8f05-b3a22e48eee0-lig9cn.jpeg",
     title: "Tacos de carne",
     description:
       "Tortillas rellenas de carne molida sazonada, cebolla fresca y una salsa que despierta los sentidos",
@@ -87,7 +91,8 @@ export const recipesData: RecipeDataType = {
     ],
   },
   "Wrap de pollo": {
-    dish_image_url: "",
+    dish_image_url:
+      "https://utfs.io/f/15260082-2145-4257-b778-31755e94c327-t2zwi5.jpeg",
     title: "Wrap de pollo",
     description:
       "Pollo jugoso, tomate fresco y lechuga crujiente en una tortilla de harina suave y deliciosa",
@@ -102,7 +107,8 @@ export const recipesData: RecipeDataType = {
     ],
   },
   "Pollo empanizado": {
-    dish_image_url: "",
+    dish_image_url:
+      "https://utfs.io/f/9f641cfe-2496-4a9a-8e0c-24daa47a2d7d-cliu8t.jpeg",
     title: "Pollo empanizado",
     description:
       "Jugosos filetes de pollo empanizados con una cobertura crujiente y dorada, listos para deleitar",
@@ -117,7 +123,8 @@ export const recipesData: RecipeDataType = {
     ],
   },
   "Carne molida con arroz": {
-    dish_image_url: "",
+    dish_image_url:
+      "https://utfs.io/f/aa649e50-b4aa-4dbb-831c-8180e95cdae8-naekbh.jpeg",
     title: "Carne molida con arroz",
     description:
       "Una combinación reconfortante de carne molida con arroz y cebolla, sazonada para satisfacer el paladar",
@@ -131,7 +138,8 @@ export const recipesData: RecipeDataType = {
     ],
   },
   "Arroz con pollo": {
-    dish_image_url: "",
+    dish_image_url:
+      "https://utfs.io/f/53e926f8-a4c6-4906-9042-79586242d6cf-e1ypv5.jpg",
     title: "Arroz con pollo",
     description:
       "Arroz perfectamente cocido con trozos tiernos de pollo, cebolla y un toque de caldo de pollo",
@@ -147,7 +155,8 @@ export const recipesData: RecipeDataType = {
     ],
   },
   "Enchiladas de pollo": {
-    dish_image_url: "",
+    dish_image_url:
+      "https://utfs.io/f/afd270fd-084e-4f41-8f44-3b0848c453a6-8jdn4g.jpg",
     title: "Enchiladas de pollo",
     description:
       "Tortillas rellenas de pollo sazonado, cubiertas con salsa picante y queso rallado derretido para una explosión de sabores",

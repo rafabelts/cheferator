@@ -1,5 +1,6 @@
 import { recipesData } from "~/utils/recipes-data";
 import Title from "./text-sections";
+import Image from "next/image";
 
 export default function FullRecipe(props: { recipe: string }) {
   const cleanParam = props.recipe.replace(/%20/g, " ");
@@ -9,7 +10,13 @@ export default function FullRecipe(props: { recipe: string }) {
   return (
     <div className="px-10 py-8">
       <div className="flex flex-col items-center md:flex-row">
-        <div className="flex h-[20vh] w-full rounded-2xl bg-blue-600 md:h-[10vh] md:w-[10vh]"></div>
+        <Image
+          height={100}
+          width={100}
+          src={recipe!.dish_image_url}
+          alt={recipe!.title}
+          className="h-[20vh] w-full rounded-2xl md:h-[10vh] md:w-[10vw]"
+        />
         <Title isCentered={true}>{recipe?.title}</Title>
       </div>
       <div className="flex flex-col gap-5 text-balance">
